@@ -1,0 +1,181 @@
+---
+---
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Have questions? Reach out to us and we'll get back to you as soon as possible.</p>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Our Location</h4>
+                        <p>Pandit Deendayal Energy University, Raisan Village, Gandhinagar, Gujarat - 382426</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Email Us</h4>
+                        <p>ieeecs.pdeu@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Call Us</h4>
+                        <p>+91 98765 43210</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Office Hours</h4>
+                        <p>Monday to Friday: 10:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" class="form-input" placeholder="Enter subject">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-textarea" placeholder="Enter your message"></textarea>
+                    </div>
+
+                    <button type="submit" class="primary-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+    }
+
+    .contact-item {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        background-color: var(--light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+    }
+
+    .contact-text h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .contact-text p {
+        color: var(--gray);
+    }
+
+    .contact-form {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .form-input,
+    .form-textarea {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: var(--transition);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(0, 102, 179, 0.1);
+    }
+
+    .form-textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    @media (max-width: 1024px) {
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+</style>
+
+<script>
+    // Simple form submission handling
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('.contact-form form');
+        
+        form?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your backend
+            alert('Thank you for your message! We will get back to you soon.');
+            form.reset();
+        });
+    });
+</script>

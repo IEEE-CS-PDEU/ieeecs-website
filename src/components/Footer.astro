@@ -1,0 +1,162 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="../assets/images/ieee_cs_pdeu_logo.png" alt="IEEE CS PDEU Logo">
+                    <div class="footer-logo-text">IEEE CS<br>PDEU</div>
+                </div>
+                <p>IEEE Computer Society PDEU Student Chapter is a vibrant community dedicated to advancing
+                    technology education and fostering innovation among students at Pandit Deendayal Energy
+                    University.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Quick Links</h3>
+                <a href="#about">About Us</a>
+                <a href="#events">Events</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#committee">Committee</a>
+                <a href="#membership">Membership</a>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Resources</h3>
+                <a href="#">IEEE CS Global</a>
+                <a href="#">IEEE Resources</a>
+                <a href="#">Technical Communities</a>
+                <a href="#">Publications</a>
+                <a href="#">Career Resources</a>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Support</h3>
+                <a href="#contact">Contact Us</a>
+                <a href="#faq">FAQs</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; {currentYear} IEEE Computer Society PDEU Student Chapter. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 4rem 0 2rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-logo img {
+        height: 40px;
+    }
+
+    .footer-logo-text {
+        font-weight: 700;
+        color: white;
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+
+    .footer-about p {
+        margin-bottom: 1.5rem;
+        opacity: 0.8;
+        line-height: 1.6;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .footer-social a {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+        background-color: var(--primary);
+    }
+
+    .footer-heading {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: white;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+        transform: translateX(5px);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        opacity: 0.7;
+    }
+
+    @media (max-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+</style>

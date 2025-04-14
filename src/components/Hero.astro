@@ -1,0 +1,102 @@
+---
+---
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Empowering Tech Leaders of Tomorrow</h1>
+            <p>IEEE Computer Society at Pandit Deendayal Energy University - Where innovation meets community. Join
+                us to explore, learn, and grow in the world of computing.</p>
+            <div class="hero-buttons">
+                <button class="primary-button">Join Our Chapter</button>
+                <button class="secondary-button">Explore Events</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        height: 90vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/ieee-background.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-content {
+        max-width: 800px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .primary-button {
+        background-color: var(--accent);
+        color: var(--dark);
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .primary-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .secondary-button {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+        padding: 0.8rem 2rem;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .secondary-button:hover {
+        background-color: white;
+        color: var(--dark);
+        transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            height: 70vh;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+        }
+    }
+</style>
