@@ -127,10 +127,9 @@
 </style>
 
 <script>
-    // Mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function () {
+    // Mobile menu toggle    document.addEventListener('DOMContentLoaded', function () {
         const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        const navLinks = document.querySelector('.nav-links') as HTMLElement;
 
         menuToggle?.addEventListener('click', () => {
             if (!navLinks) return;
@@ -148,9 +147,7 @@
                 navLinks.style.padding = '1rem';
                 navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
             }
-        });
-
-        // Reset nav display on resize
+        });        // Reset nav display on resize
         window.addEventListener('resize', () => {
             if (!navLinks) return;
             
@@ -168,5 +165,4 @@
                 navLinks.style.display = 'none';
             }
         });
-    });
 </script>
