@@ -1,0 +1,113 @@
+---
+---
+
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">About Our Chapter</h2>
+        <p class="section-subtitle">Discover how we're fostering the next generation of computing professionals
+            through innovation, collaboration, and excellence.</p>
+
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="../assets/images/ieee_comittee.jpg" alt="IEEE CS PDEU Team">
+            </div>
+            <div class="about-content">
+                <h3>Who We Are</h3>
+                <p>The IEEE Computer Society, Student Chapter at PDEU is a vibrant community dedicated to advancing
+                    technology and computing knowledge. As part of the world's leading organization for computer
+                    science and technology, we provide a platform for students to enhance their technical skills,
+                    professional development, and networking opportunities.</p>
+                <p>Established in 2018, our chapter has grown to become one of the most active technical communities
+                    on campus, hosting various events, workshops, and initiatives that bridge the gap between
+                    academic knowledge and industry requirements.</p>
+
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">120+</div>
+                        <div class="stat-label">Members</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Events</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Workshops</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .about-image {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .about-content h3 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+    }
+
+    .about-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+        color: var(--dark);
+    }
+
+    .about-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .stat-card {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: var(--transition);
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        color: var(--gray);
+        font-weight: 500;
+    }
+
+    @media (max-width: 1024px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+</style>

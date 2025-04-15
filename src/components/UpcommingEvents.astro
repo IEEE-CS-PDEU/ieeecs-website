@@ -1,0 +1,270 @@
+---
+// You can add these imports at the top of your file
+import "../styles/global.css";
+
+// Sample event data - you would likely fetch this from a CMS or API
+const upcomingEvents = [
+  {
+    id: 1,
+    title: "Machine Learning Workshop",
+    date: "May 5, 2025",
+    time: "10:00 AM - 2:00 PM",
+    venue: "Engineering Block, Room 302",
+    description: "Join us for a hands-on workshop on machine learning fundamentals. Learn about neural networks, decision trees, and practical applications in various engineering domains.",
+    posterUrl: "/images/events/ml-workshop.jpg",
+    registrationUrl: "https://forms.google.com/ml-workshop-registration"
+  },
+  {
+    id: 2,
+    title: "Cybersecurity Symposium",
+    date: "May 15, 2025",
+    time: "2:00 PM - 5:00 PM",
+    venue: "Central Auditorium",
+    description: "Industry experts share insights on the latest cybersecurity threats and defense mechanisms. Perfect for students interested in network security and ethical hacking.",
+    posterUrl: "/images/events/cybersecurity-symposium.jpg",
+    registrationUrl: "https://forms.google.com/cybersecurity-registration"
+  },
+  {
+    id: 3,
+    title: "Aurdino 101",
+    date: "June 10-12, 2025",
+    time: "48-hour event",
+    venue: "Innovation Center",
+    description: "Into to Basics of Aurdino and its applications. This workshop will cover the basics of Aurdino, including hardware setup, programming, and project development.",
+    posterUrl: "/images/events/hackathon.jpg",
+    registrationUrl: "https://forms.google.com/hackathon-registration"
+  }
+];
+---
+
+<section id="events" class="events-section">
+  <div class="container mx-auto px-4 py-16">
+    <div class="section-header text-center mb-12">
+      <h2 class="text-3xl font-bold mb-2">Upcoming Events</h2>
+      <div class="header-underline"></div>
+      <p class="text-lg mt-4">Join us at our upcoming events to learn, network, and grow your skills</p>
+    </div>
+    
+    <div class="events-container">
+      {upcomingEvents.map((event) => (
+        <div class="event-card">
+          <div class="event-poster">
+            <img src={event.posterUrl} alt={`${event.title} Poster`} />
+          </div>
+          <div class="event-details">
+            <h3 class="event-title">{event.title}</h3>
+            
+            <div class="event-meta">
+              <div class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>{event.date}</span>
+              </div>
+              
+              <div class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>{event.time}</span>
+              </div>
+              
+              <div class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>{event.venue}</span>
+              </div>
+            </div>
+            
+            <p class="event-description">{event.description}</p>
+            
+            <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer" class="registration-button">
+              Register Now
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="view-all-container">
+      <a href="/events" class="view-all-button">
+        View All Events
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .events-section {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .header-underline {
+    height: 4px;
+    width: 80px;
+    background: linear-gradient(90deg, #003366, #ffcc00);
+    margin: 0 auto;
+  }
+  
+  .events-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .event-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .event-poster {
+    height: 220px;
+    overflow: hidden;
+  }
+  
+  .event-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .event-card:hover .event-poster img {
+    transform: scale(1.05);
+  }
+  
+  .event-details {
+    padding: 1.5rem;
+  }
+  
+  .event-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 1rem;
+  }
+  
+  .event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .meta-icon {
+    color: #ffcc00;
+  }
+  
+  .event-description {
+    margin: 1rem 0;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  .registration-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffcc00;
+    color: #003366;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    text-decoration: none;
+  }
+  
+  .registration-button:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+  }
+  
+  .view-all-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .view-all-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent;
+    color: #003366;
+    border: 2px solid #003366;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .view-all-button:hover {
+    background-color: #003366;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  @media (min-width: 768px) {
+    .events-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .event-meta {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .events-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .event-card {
+      flex-direction: column;
+    }
+    
+    .event-poster {
+      height: 200px;
+    }
+  }
+</style>

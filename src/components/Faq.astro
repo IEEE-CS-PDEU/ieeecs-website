@@ -1,0 +1,117 @@
+---
+interface FaqItem {
+    question: string;
+    answer: string;
+}
+
+const faqItems: FaqItem[] = [
+    {
+        question: "How do I become a member of IEEE CS PDEU?",
+        answer: "To become a member, you need to first register on the IEEE website and choose Computer Society as your technical community. Then, you can join our local chapter by filling out the registration form on our website and paying the annual membership fee."
+    },
+    {
+        question: "What are the benefits of joining IEEE CS PDEU?",
+        answer: "Members enjoy access to technical workshops, networking events, industry connections, leadership opportunities, IEEE CS digital library, mentorship programs, and more. You'll also receive certificates for participation in chapter activities."
+    },
+    {
+        question: "How often do you organize events?",
+        answer: "We organize events regularly throughout the academic year, including technical workshops, guest lectures, coding competitions, and social gatherings. On average, we host 2-3 events each month."
+    },
+    {
+        question: "Can first-year students join the chapter?",
+        answer: "Yes, absolutely! We welcome students from all years and disciplines. First-year students can gain valuable exposure to the tech community and build their skills from day one."
+    },
+    {
+        question: "Do I need to have programming experience to join?",
+        answer: "No, you don't need prior programming experience. Our community is diverse, and we offer events and resources for all skill levels, from beginners to advanced developers."
+    }
+];
+---
+
+<section id="faq" class="section faq">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Find answers to common questions about IEEE CS membership, events, and activities.</p>
+
+        <div class="faq-container">
+            {faqItems.map(item => (
+                <div class="faq-item">
+                    <div class="faq-question">
+                        {item.question}
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        {item.answer}
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .faq {
+        background-color: #f0f4f8;
+    }
+
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        background-color: white;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-question {
+        padding: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+
+    .faq-question:hover {
+        background-color: rgba(0, 102, 179, 0.05);
+    }
+
+    .faq-answer {
+        padding: 0 1.5rem 1.5rem;
+        color: var(--gray);
+        line-height: 1.6;
+        display: none;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling as HTMLElement;
+                const isOpen = answer.style.display === 'block';
+
+                answer.style.display = isOpen ? 'none' : 'block';
+
+                // Rotate icon
+                const icon = question.querySelector('i');
+                if (icon) {
+                    icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Initially hide all answers
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            const element = answer as HTMLElement;
+            element.style.display = 'none';
+        });
+    });
+</script>

@@ -1,0 +1,104 @@
+---
+interface GalleryItem {
+    image: string;
+    title: string;
+    alt: string;
+}
+
+const galleryItems: GalleryItem[] = [
+    {
+        image: "/api/placeholder/400/300",
+        title: "Workshop on Cloud Computing",
+        alt: "Workshop Session"
+    },
+    {
+        image: "/api/placeholder/400/300",
+        title: "CodeCraft Hackathon 2023",
+        alt: "Hackathon Teams"
+    },
+    {
+        image: "/api/placeholder/400/300",
+        title: "Technical Seminar on Cybersecurity",
+        alt: "Technical Seminar"
+    },
+    {
+        image: "/api/placeholder/400/300",
+        title: "Annual IEEE CS Day Celebration",
+        alt: "Team Celebration"
+    },
+    {
+        image: "/api/placeholder/400/300",
+        title: "Industry Expert Guest Lecture",
+        alt: "Guest Lecture"
+    },
+    {
+        image: "/api/placeholder/400/300",
+        title: "Competitive Programming Contest",
+        alt: "Coding Competition"
+    }
+];
+---
+
+<section id="gallery" class="section">
+    <div class="container">
+        <h2 class="section-title">Our Gallery</h2>
+        <p class="section-subtitle">A glimpse into our vibrant community events, workshops, and memorable moments.</p>
+
+        <div class="gallery-grid">
+            {galleryItems.map(item => (
+                <div class="gallery-item">
+                    <img src={item.image} alt={item.alt} />
+                    <div class="gallery-overlay">
+                        <h4>{item.title}</h4>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .gallery-item {
+        overflow: hidden;
+        border-radius: 8px;
+        height: 250px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        opacity: 0;
+        transition: var(--transition);
+        display: flex;
+        align-items: flex-end;
+        padding: 1.5rem;
+        color: white;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+    }
+</style>

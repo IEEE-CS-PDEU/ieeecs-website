@@ -9,7 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.0"
+    "@fontsource/inter": "^5.2.5",
+    "@tailwindcss/vite": "^4.1.4",
+    "animate.css": "^4.1.1",
+    "astro": "^5.6.2"
   },
   "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
   "pnpm": {
@@ -17,5 +20,9 @@
       "esbuild",
       "sharp"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "^4.1.4"
   }
 }
