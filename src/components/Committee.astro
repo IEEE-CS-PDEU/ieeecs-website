@@ -1,199 +1,203 @@
 ---
 interface CommitteeMember {
-    name: string;
-    role: string;
-    image: string;
-    socialLinks?: {
-        linkedin?: string;
-        github?: string;
-        twitter?: string;
-    };
+  name: string;
+  role: string;
+  image: string;
+  socialLinks?: {
+    linkedin?: string;
+    github?: string;
+    twitter?: string;
+  };
 }
 
 const committeeMembers: CommitteeMember[] = [
-    {
-        name: "Deena Lad",
-        role: "Advisor",
-        image: "/committee/deena_advisor.jpg",
-        socialLinks: {
-            linkedin: "#",
-            github: "#",
-            twitter: "#"
-        }
+  {
+    name: "Deena Lad",
+    role: "Advisor",
+    image: "/committee/deena_advisor.webp",
+    socialLinks: {
+      linkedin: "#",
+      github: "#",
+      twitter: "#",
     },
-    {
-        name: "Meera Prajapati",
-        role: "Chairperson",
-        image: "/committee/meera_chair.jpg",
-        socialLinks: {
-            linkedin: "#",
-            github: "#",
-            twitter: "#"
-        }
+  },
+  {
+    name: "Meera Prajapati",
+    role: "Chairperson",
+    image: "/committee/meera_chair.webp",
+    socialLinks: {
+      linkedin: "#",
+      github: "#",
+      twitter: "#",
     },
-    {
-        name: "Rishabh Nandekar",
-        role: "Vice Chairperson",
-        image: "/committee/rishabh_vice_chair.jpg",
-        socialLinks: {
-            linkedin: "#",
-            github: "#",
-            twitter: "#"
-        }
+  },
+  {
+    name: "Rishabh Nandekar",
+    role: "Vice Chairperson",
+    image: "/committee/rishabh_vice_chair.webp",
+    socialLinks: {
+      linkedin: "#",
+      github: "#",
+      twitter: "#",
     },
-    {
-        name: "Devarsh Mehta",
-        role: "Tech Head",
-        image: "/committee/devarsh_tech_head.jpg",
-        socialLinks: {
-            linkedin: "#",
-            github: "#",
-            twitter: "#"
-        }
+  },
+  {
+    name: "Devarsh Mehta",
+    role: "Tech Head",
+    image: "/committee/devarsh_tech_head.webp",
+    socialLinks: {
+      linkedin: "#",
+      github: "#",
+      twitter: "#",
     },
-    {
-        name: "Grishma Makawana",
-        role: "Creative Marketing Head",
-        image: "/committee/ghrishma_creative_marketing_head.jpg",
-        socialLinks: {
-            linkedin: "#",
-            github: "#",
-            twitter: "#"
-        }
+  },
+  {
+    name: "Grishma Makawana",
+    role: "Creative Marketing Head",
+    image: "/committee/ghrishma_creative_marketing_head.webp",
+    socialLinks: {
+      linkedin: "#",
+      github: "#",
+      twitter: "#",
     },
-    {
-        name: "Bhumica Bansal",
-        role: "EM Head",
-        image: "/committee/bhumica_em_head.jpg",
-        socialLinks: {
-            linkedin: "#",
-            github: "#",
-            twitter: "#"
-        }
+  },
+  {
+    name: "Bhumica Bansal",
+    role: "EM Head",
+    image: "/committee/bhumica_em_head.webp",
+    socialLinks: {
+      linkedin: "#",
+      github: "#",
+      twitter: "#",
     },
-    {
-        name: "Sharmishtha Kola",
-        role: "GD Head",
-        image: "/committee/sharmishtha.png",
-        socialLinks: {
-            linkedin: "#",
-            github: "#",
-            twitter: "#"
-        }
-    }
+  },
+  {
+    name: "Sharmishtha Kola",
+    role: "GD Head",
+    image: "/committee/sharmishtha.webp",
+    socialLinks: {
+      linkedin: "#",
+      github: "#",
+      twitter: "#",
+    },
+  },
 ];
 ---
 
 <section id="committee" class="section committee">
-    <div class="container">
-        <h2 class="section-title">Our Committee</h2>
-        <p class="section-subtitle">Meet the dedicated team working behind the scenes to make our IEEE CS PDEU
-            Chapter a success.</p>
+  <div class="container">
+    <h2 class="section-title">Our Committee</h2>
+    <p class="section-subtitle">
+      Meet the dedicated team working behind the scenes to make our IEEE CS PDEU
+      Chapter a success.
+    </p>
 
-        <div class="committee-grid">
-            {committeeMembers.map(member => (
-                <div class="member-card">
-                    <div class="member-image">
-                        <img src={member.image} alt={member.role} class="object">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">{member.name}</h3>
-                        <div class="member-role">{member.role}</div>
-                        <div class="social-links">
-                            {member.socialLinks?.linkedin && (
-                                <a href={member.socialLinks.linkedin} class="social-link">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            )}
-                            {member.socialLinks?.github && (
-                                <a href={member.socialLinks.github} class="social-link">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            )}
-                            {member.socialLinks?.twitter && (
-                                <a href={member.socialLinks.twitter} class="social-link">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
+    <div class="committee-grid">
+      {
+        committeeMembers.map((member) => (
+          <div class="member-card">
+            <div class="member-image">
+              <img src={member.image} alt={member.role} class="object" />
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">{member.name}</h3>
+              <div class="member-role">{member.role}</div>
+              <div class="social-links">
+                {member.socialLinks?.linkedin && (
+                  <a href={member.socialLinks.linkedin} class="social-link">
+                    <i class="fab fa-linkedin" />
+                  </a>
+                )}
+                {member.socialLinks?.github && (
+                  <a href={member.socialLinks.github} class="social-link">
+                    <i class="fab fa-github" />
+                  </a>
+                )}
+                {member.socialLinks?.twitter && (
+                  <a href={member.socialLinks.twitter} class="social-link">
+                    <i class="fab fa-twitter" />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))
+      }
     </div>
+  </div>
 </section>
 
 <style>
-    .committee {
-        background-color: #f0f4f8;
-    }
+  .committee {
+    background-color: #f0f4f8;
+  }
 
-    .committee-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 2rem;
-    }
+  .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
 
-    .member-card {
-        background-color: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: var(--transition);
-    }
+  .member-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+  }
 
-    .member-card:hover {
-        transform: translateY(-5px);
-    }
+  .member-card:hover {
+    transform: translateY(-5px);
+  }
 
-    .member-image {
-        height: 250px;
-        overflow: hidden;
-    }
+  .member-image {
+    height: 250px;
+    overflow: hidden;
+  }
 
-    .member-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  .member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-    .member-info {
-        padding: 1.5rem;
-        text-align: center;
-    }
+  .member-info {
+    padding: 1.5rem;
+    text-align: center;
+  }
 
-    .member-name {
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-    }
+  .member-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
 
-    .member-role {
-        color: var(--primary);
-        font-weight: 600;
-        margin-bottom: 1rem;
-    }
+  .member-role {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
 
-    .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-    }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
 
-    .social-link {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        background-color: var(--light);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--dark);
-        transition: var(--transition);
-    }
+  .social-link {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    transition: var(--transition);
+  }
 
-    .social-link:hover {
-        background-color: var(--primary);
-        color: white;
-    }
+  .social-link:hover {
+    background-color: var(--primary);
+    color: white;
+  }
 </style>

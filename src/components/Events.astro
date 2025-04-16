@@ -1,156 +1,167 @@
 ---
 interface Event {
-    date: string;
-    title: string;
-    description: string;
-    image: string;
-    link?: string;
+  date: string;
+  title: string;
+  description: string;
+  image: string;
+  link?: string;
 }
 
 const events: Event[] = [
-    {
-        date: "January 07, 2025",
-        title: "IoT Workshop",
-        description: "A hands-on 5 Days workshop introducing the fundamentals of IoT & AI ML, including device connectivity, data processing, and real-world applications.",
-        image: "/events/iot.png",
-        link: "https://drive.google.com/drive/folders/1Du40iu1YxLw5sTK4ltXJYIOKEW82BVY2"
-    },
-    {
-        date: "October 18, 2024",
-        title: "CP Expert Talk",
-        description: "An insightful session on Competitive Programming and DSA by PDEU's alumnus Vinay K, currently a Software Engineer III at Google.",
-        image: "/events/dsa.png",
-        link: "#"
-    },
-    {
-        date: "October 17, 2024",
-        title: "GenAI Session",
-        description: "An insightful discussion with industry experts about emerging trends and the future landscape of computing.",
-        image: "/events/genai.png",
-        link: "#"
-    },
-    {
-        date: "August 2, 2024",
-        title: "Web Development Workshop",
-        description: "A comprehensive workshop covering the latest web development technologies and best practices.",
-        image: "../assets/images/events/webdev_workshop/web_dev_workshop.jpg",
-        link: "#"
-    },
-    {
-        date: "August 2, 2024",
-        title: "Kernel & Commit",
-        description: "An interactive session on the Linux kernel and Version Control Systems like Git & GitHub and its development process, featuring hands-on exercises.",
-        image: "/events/git.png",
-        link: "#"
-    }
+  {
+    date: "January 07, 2025",
+    title: "IoT Workshop",
+    description:
+      "A hands-on 5 Days workshop introducing the fundamentals of IoT & AI ML, including device connectivity, data processing, and real-world applications.",
+    image: "/events/iot.webp",
+    link: "https://drive.google.com/drive/folders/1Du40iu1YxLw5sTK4ltXJYIOKEW82BVY2",
+  },
+  {
+    date: "October 18, 2024",
+    title: "CP Expert Talk",
+    description:
+      "An insightful session on Competitive Programming and DSA by PDEU's alumnus Vinay K, currently a Software Engineer III at Google.",
+    image: "/events/dsa.webp",
+    link: "#",
+  },
+  {
+    date: "October 17, 2024",
+    title: "GenAI Session",
+    description:
+      "An insightful discussion with industry experts about emerging trends and the future landscape of computing.",
+    image: "/events/genai.webp",
+    link: "#",
+  },
+  {
+    date: "August 2, 2024",
+    title: "Web Development Workshop",
+    description:
+      "A comprehensive workshop covering the latest web development technologies and best practices.",
+    image: "../assets/images/events/webdev_workshop/web_dev_workshop.jpg",
+    link: "#",
+  },
+  {
+    date: "August 2, 2024",
+    title: "Kernel & Commit",
+    description:
+      "An interactive session on the Linux kernel and Version Control Systems like Git & GitHub and its development process, featuring hands-on exercises.",
+    image: "/events/git.webp",
+    link: "#",
+  },
 ];
 ---
 
 <section id="events" class="section events">
-    <div class="container">
-        <h2 class="section-title">Past Events & Workshops</h2>
-        <p class="section-subtitle">Explore our exciting lineup of technical events, workshops, and competitions
-            designed to enhance your skills and knowledge.</p>
+  <div class="container">
+    <h2 class="section-title">Past Events & Workshops</h2>
+    <p class="section-subtitle">
+      Explore our exciting lineup of technical events, workshops, and
+      competitions designed to enhance your skills and knowledge.
+    </p>
 
-        <div class="event-cards">
-            {events.map(event => (
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src={event.image} alt={event.title} />
-                    </div>
-                    <div class="event-content">
-                        <div class="event-date">{event.date}</div>
-                        <h3 class="event-title">{event.title}</h3>
-                        <p class="event-description">{event.description}</p>
-                        <a href={event.link || "#"} class="event-link">Learn More →</a>
-                    </div>
-                </div>
-            ))}
-        </div>
+    <div class="event-cards">
+      {
+        events.map((event) => (
+          <div class="event-card">
+            <div class="event-image">
+              <img src={event.image} alt={event.title} />
+            </div>
+            <div class="event-content">
+              <div class="event-date">{event.date}</div>
+              <h3 class="event-title">{event.title}</h3>
+              <p class="event-description">{event.description}</p>
+              <a href={event.link || "#"} class="event-link">
+                Learn More →
+              </a>
+            </div>
+          </div>
+        ))
+      }
     </div>
+  </div>
 </section>
 
 <style>
-    .events {
-        background-color: #f0f4f8;
-    }
+  .events {
+    background-color: #f0f4f8;
+  }
 
+  .event-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .event-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+  }
+
+  .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .event-image {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+
+  .event-card:hover .event-image img {
+    transform: scale(1.05);
+  }
+
+  .event-content {
+    padding: 1.5rem;
+  }
+
+  .event-date {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .event-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .event-description {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .event-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+  }
+
+  .event-link:hover {
+    gap: 0.8rem;
+  }
+
+  @media (max-width: 768px) {
     .event-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
-
-    .event-card {
-        background-color: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: var(--transition);
-    }
-
-    .event-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .event-image {
-        height: 200px;
-        overflow: hidden;
-    }
-
-    .event-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: var(--transition);
-    }
-
-    .event-card:hover .event-image img {
-        transform: scale(1.05);
-    }
-
-    .event-content {
-        padding: 1.5rem;
-    }
-
-    .event-date {
-        color: var(--primary);
-        font-weight: 600;
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .event-title {
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: var(--dark);
-    }
-
-    .event-description {
-        color: var(--gray);
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-    }
-
-    .event-link {
-        color: var(--primary);
-        text-decoration: none;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: var(--transition);
-    }
-
-    .event-link:hover {
-        gap: 0.8rem;
-    }
-
-    @media (max-width: 768px) {
-        .event-cards {
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        }
-    }
+  }
 </style>

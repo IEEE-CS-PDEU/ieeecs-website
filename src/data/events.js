@@ -67,7 +67,7 @@ export const eventsData = [
     date: "2025-06-15",
     formattedDate: "June 15-16, 2025",
     image: "/events/hackathon-2025.jpg",
-    placeholderImage: "/events/git.png",
+    placeholderImage: "/events/git.webp",
     description:
       "Explored the world of Version Control by learning GitHub and Linux essentials in this workshop, mastering version control and open-source collaboration.",
     location: "PDEU Campus",
