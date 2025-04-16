@@ -1,59 +1,12 @@
 ---
-interface GalleryItem {
-    image: string;
-    title: string;
-    alt: string;
-}
-
-const galleryItems: GalleryItem[] = [
-    {
-        image: "/api/placeholder/400/300",
-        title: "Workshop on Cloud Computing",
-        alt: "Workshop Session"
-    },
-    {
-        image: "/api/placeholder/400/300",
-        title: "CodeCraft Hackathon 2023",
-        alt: "Hackathon Teams"
-    },
-    {
-        image: "/api/placeholder/400/300",
-        title: "Technical Seminar on Cybersecurity",
-        alt: "Technical Seminar"
-    },
-    {
-        image: "/api/placeholder/400/300",
-        title: "Annual IEEE CS Day Celebration",
-        alt: "Team Celebration"
-    },
-    {
-        image: "/api/placeholder/400/300",
-        title: "Industry Expert Guest Lecture",
-        alt: "Guest Lecture"
-    },
-    {
-        image: "/api/placeholder/400/300",
-        title: "Competitive Programming Contest",
-        alt: "Coding Competition"
-    }
-];
+import GalleryComponent from '../components/Gallery.jsx';
 ---
 
 <section id="gallery" class="section">
-    <div class="container">
+    <div class="container overflow-hidden min-w-screen">
         <h2 class="section-title">Our Gallery</h2>
         <p class="section-subtitle">A glimpse into our vibrant community events, workshops, and memorable moments.</p>
-
-        <div class="gallery-grid">
-            {galleryItems.map(item => (
-                <div class="gallery-item">
-                    <img src={item.image} alt={item.alt} />
-                    <div class="gallery-overlay">
-                        <h4>{item.title}</h4>
-                    </div>
-                </div>
-            ))}
-        </div>
+        <GalleryComponent  client:visible={{rootMargin: "200px"}}  />
     </div>
 </section>
 

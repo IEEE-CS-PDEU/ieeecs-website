@@ -14,7 +14,7 @@ const committeeMembers: CommitteeMember[] = [
     {
         name: "Deena Lad",
         role: "Advisor",
-        image: "../assets/images/comittee/deena_advisor.jpg",
+        image: "/committee/deena_advisor.jpg",
         socialLinks: {
             linkedin: "#",
             github: "#",
@@ -24,7 +24,7 @@ const committeeMembers: CommitteeMember[] = [
     {
         name: "Meera Prajapati",
         role: "Chairperson",
-        image: "../assets/images/comittee/meera_chair.jpg",
+        image: "/committee/meera_chair.jpg",
         socialLinks: {
             linkedin: "#",
             github: "#",
@@ -34,7 +34,7 @@ const committeeMembers: CommitteeMember[] = [
     {
         name: "Rishabh Nandekar",
         role: "Vice Chairperson",
-        image: "../assets/images/comittee/rishabh_vice_chair.jpg",
+        image: "/committee/rishabh_vice_chair.jpg",
         socialLinks: {
             linkedin: "#",
             github: "#",
@@ -44,7 +44,7 @@ const committeeMembers: CommitteeMember[] = [
     {
         name: "Devarsh Mehta",
         role: "Tech Head",
-        image: "../assets/images/comittee/devarsh_tech_head.jpg",
+        image: "/committee/devarsh_tech_head.jpg",
         socialLinks: {
             linkedin: "#",
             github: "#",
@@ -54,7 +54,7 @@ const committeeMembers: CommitteeMember[] = [
     {
         name: "Grishma Makawana",
         role: "Creative Marketing Head",
-        image: "../assets/images/comittee/ghrishma_creative_marketing_head.jpg",
+        image: "/committee/ghrishma_creative_marketing_head.jpg",
         socialLinks: {
             linkedin: "#",
             github: "#",
@@ -64,7 +64,7 @@ const committeeMembers: CommitteeMember[] = [
     {
         name: "Bhumica Bansal",
         role: "EM Head",
-        image: "../assets/images/comittee/bhumica_em_head.jpg",
+        image: "/committee/bhumica_em_head.jpg",
         socialLinks: {
             linkedin: "#",
             github: "#",
@@ -74,7 +74,7 @@ const committeeMembers: CommitteeMember[] = [
     {
         name: "Sharmishtha Kola",
         role: "GD Head",
-        image: "/api/placeholder/400/400",
+        image: "/committee/sharmishtha.png",
         socialLinks: {
             linkedin: "#",
             github: "#",
@@ -94,7 +94,7 @@ const committeeMembers: CommitteeMember[] = [
             {committeeMembers.map(member => (
                 <div class="member-card">
                     <div class="member-image">
-                        <img src={member.image} alt={member.role}>
+                        <img src={member.image} alt={member.role} class="object">
                     </div>
                     <div class="member-info">
                         <h3 class="member-name">{member.name}</h3>
