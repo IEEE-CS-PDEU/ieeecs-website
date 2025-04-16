@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
-import { horizontalLoop } from "./gsapLoopHelper";
+import { horizontalLoop } from "../../utils/gsapLoopHelper";
 
 const imageUrls = [
   // "/gallery/compressed/photo1.webp",
