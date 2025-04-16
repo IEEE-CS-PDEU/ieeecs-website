@@ -64,15 +64,15 @@ const events: Event[] = [
         events.map((event) => (
           <div class="event-card">
             <div class="event-image">
-              <img src={event.image} alt={event.title} />
+              <img src={event.image} alt={event.title} class="object-top" />
             </div>
             <div class="event-content">
               <div class="event-date">{event.date}</div>
               <h3 class="event-title">{event.title}</h3>
               <p class="event-description">{event.description}</p>
-              <a href={event.link || "#"} class="event-link">
+              {/* <a href={event.link || "#"} class="event-link">
                 Learn More →
-              </a>
+              </a> */}
             </div>
           </div>
         ))
@@ -93,7 +93,7 @@ const events: Event[] = [
   }
 
   .event-card {
-    background-color: white;
+    background: rgb(231, 231, 231);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -106,7 +106,7 @@ const events: Event[] = [
   }
 
   .event-image {
-    height: 200px;
+    height: 400px;
     overflow: hidden;
   }
 
@@ -122,7 +122,7 @@ const events: Event[] = [
   }
 
   .event-content {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .event-date {
@@ -141,7 +141,7 @@ const events: Event[] = [
 
   .event-description {
     color: var(--gray);
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
     line-height: 1.6;
   }
 
