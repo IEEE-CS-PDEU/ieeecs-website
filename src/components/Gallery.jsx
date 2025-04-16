@@ -1,52 +1,52 @@
-import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
 import { horizontalLoop } from "./gsapLoopHelper";
 
 const imageUrls = [
-  "/gallery/photo1.webp",
-  "/gallery/photo2.webp",
-  "/gallery/photo3.webp",
-  "/gallery/photo4.webp",
-  "/gallery/photo5.webp",
-  "/gallery/photo6.webp",
-  "/gallery/photo7.webp",
-  "/gallery/photo8.webp",
-  "/gallery/photo9.webp",
-  "/gallery/photo10.webp",
-  "/gallery/photo11.webp",
-  "/gallery/photo12.webp",
-  "/gallery/photo13.webp",
-  "/gallery/photo14.webp",
-  "/gallery/photo15.webp",
-  "/gallery/photo16.webp",
-  "/gallery/photo17.webp",
-  "/gallery/photo18.webp",
-  "/gallery/photo19.webp",
-  "/gallery/photo20.webp",
+  // "/gallery/compressed/photo1.webp",
+  "/gallery/compressed/photo2.webp",
+  "/gallery/compressed/photo3.webp",
+  "/gallery/compressed/photo4.webp",
+  "/gallery/compressed/photo5.webp",
+  "/gallery/compressed/photo6.webp",
+  "/gallery/compressed/photo7.webp",
+  "/gallery/compressed/photo8.webp",
+  "/gallery/compressed/photo9.webp",
+  "/gallery/compressed/photo10.webp",
+  "/gallery/compressed/photo11.webp",
+  "/gallery/compressed/photo12.webp",
+  "/gallery/compressed/photo13.webp",
+  "/gallery/compressed/photo14.webp",
+  "/gallery/compressed/photo15.webp",
+  "/gallery/compressed/photo16.webp",
+  "/gallery/compressed/photo17.webp",
+  "/gallery/compressed/photo18.webp",
+  "/gallery/compressed/photo19.webp",
+  "/gallery/compressed/photo20.webp",
 ];
 
 const GalleryImage = ({ url, type = "" }) => {
   const imageRef = useRef(null);
-  // const [isVisible, setIsVisible] = useState(false);
-  // const [hasBeenVisible, setHasBeenVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       setIsVisible(entry.isIntersecting);
-  //       if (entry.isIntersecting) setHasBeenVisible(true);
-  //     },
-  //     { threshold: 0.1 }
-  //   );
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) setHasBeenVisible(true);
+      },
+      { threshold: 0.1 }
+    );
 
-  //   if (imageRef.current) observer.observe(imageRef.current);
+    if (imageRef.current) observer.observe(imageRef.current);
 
-  //   return () => {
-  //     if (imageRef.current) observer.unobserve(imageRef.current);
-  //   };
-  // }, []);
+    return () => {
+      if (imageRef.current) observer.unobserve(imageRef.current);
+    };
+  }, []);
 
-  // const isCurrentlyVisible = isVisible || hasBeenVisible;
+  const isCurrentlyVisible = isVisible || hasBeenVisible;
 
   return (
     <img
@@ -55,7 +55,8 @@ const GalleryImage = ({ url, type = "" }) => {
       className={`gallery_image${type}
                 sm:min-w-[500px] sm:max-w-[500px] sm:min-h-[300px] sm:max-h-[300px]
                 min-w-[250px] max-w-[250px] min-h-[150px] max-h-[150px]
-                object-cover opacity-100
+                object-cover 
+                ${isCurrentlyVisible ? "opacity-100" : "opacity-0"}
                 transition-opacity duration-500`}
       alt="Gallery"
     />
@@ -116,7 +117,7 @@ export default function Gallery() {
   const secondHalf = imageUrls.slice(midIndex);
 
   return (
-    <section className="sm:min-h-screen h-fit justify-center w-full flex flex-col items-center gap-6 max-w-screen">
+    <section className=" h-fit justify-center w-full flex flex-col items-center gap-6 max-w-screen">
       <div className="flex flex-row flex-nowrap gap-4">
         {firstHalf.map((url, index) => (
           <GalleryImage key={index} url={url} />
